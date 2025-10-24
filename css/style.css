@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --main-color: #28e98c;
+  --second-color: #1a2222;
+}
+body {
+  font-family: 'Kanit', Helvetica, sans-serif;
+  background: url(hero-layer.png), #1a2222;
+  background-attachment: fixed;
+  background-size: cover;
+  color: #fff;
+}
+.container {
+  width: 80%;
+  margin: 50px auto;
+}
+.main-text {
+  text-align: center;
+  font-size: 2rem;
+  margin: 5rem 0;
+}
+.main-text span {
+  color: var(--main-color);
+}
+.inputs-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+.inputs-container div {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: .5rem;
+}
+.inputs-container div label {
+  font-size: 1.3rem;
+}
+.inputs-container div input {
+  color: #fff;
+  height: 2.1rem;
+  padding: .5rem;
+  border: 1.5px solid #777;
+  border-radius: .3rem;
+  outline: none;
+  transition: .2s;
+  background: transparent;
+}
+.inputs-container input:focus {
+  box-shadow: 0 0 3px var(--main-color);
+  transform: scale(1.08);
+  color: #fff;
+}
+.container .btns {
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  gap: 1rem;
+}
+.container .btns button {
+  padding: .6rem 2rem;
+  max-height: fit-content;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  border: 1px solid var(--main-color);
+  transition: .3s;
+}
+.btns .add-btn {
+  background-color: var(--main-color);
+}
+.btns .add-btn:hover {
+  cursor: pointer;
+  color: #fff;
+  background-color: transparent;
+}
+.btns .delete-all-btn:hover {
+  cursor: pointer;
+  color: #fff;
+  background-color: red;
+  border-color: var(--second-color);
+}
+.container .search {
+  width: 100%;
+  margin: 60px auto 0;
+  display: flex;
+  justify-content: center;
+}
+.container #searchInput {
+  height: 2.3rem;
+  width: 60%;
+  color: #fff;
+  height: 2rem;
+  padding: .5rem;
+  border: 1.5px solid #777;
+  border-radius: .3rem;
+  outline: none;
+  transition: .2s;
+  background: transparent;
+}
+.container #searchInput:focus {
+  box-shadow: 0 0 3px var(--main-color);
+  transform: scale(1.08);
+  color: #fff;
+}
+table {
+  margin-top: 40px;
+  width: 100%;
+  text-align: center;
+  text-transform: capitalize;
+}
+thead, tfoot {
+  background-color: var(--main-color);
+  color: #000;
+}
+th, td {
+  border: 1px solid #777;
+  padding: .7rem 1rem;
+  border-radius: .3rem;
+}
+/* ID Number */
+tbody tr td:first-child {
+  width: .5rem;
+}
+/* Management name into body */
+tbody tr td:nth-child(2) {
+  text-align: left;
+}
+tfoot th {
+  text-align: left;
+}
+table td .btns {
+  display: flex;
+  justify-content: space-evenly;
+}
+.btns .delete-row,
+.btns .edite-row {
+  transition: all .3s;
+  padding: .5rem;
+}
+a.delete-row:hover,
+a.edite-row:hover {
+  color: red;
+  background-color: #fff;
+  cursor: pointer;
+  border-radius: 100%;
+}
+a.edite-row:hover {
+  color: black;
+}

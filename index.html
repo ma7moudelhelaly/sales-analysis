@@ -1,67 +1,82 @@
 <!DOCTYPE html>
-<html lang="en" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div class="py-5">
-    <div class="container">
-      <h1 class="my-4 text-center">تحليل مبيعات 2025</h1>
-      <div class="mang-name">
-        <label for="mangName">الإدارة</label>
-        <input type="text" class="form-control w-50 mb-3" id="mangName">
-      </div>
-      <div class="customer-name">
-        <label for="customerName">الفرع</label>
-        <input type="text" class="form-control w-50 mb-3" id="customerName">
-      </div>
-      <div class="voice-num">
-        <label for="voiceNum">رقم الفاتورة</label>
-        <input type="number" class="form-control w-50 mb-3" id="voiceNum">
-      </div>
-      <div class="doc-num">
-        <label for="docNum">رقم المستند</label>
-        <input type="number" class="form-control w-50 mb-3" id="docNum">
-      </div>
-      <div class="voice-value">
-        <label for="voiceValue">إجمالي الفاتورة</label>
-        <input type="number" class="form-control w-50 mb-3" id="voiceValue">
-      </div>
-      <div class="doc-value">
-        <label for="docValue">إجمالي الإذن</label>
-        <input type="number" class="form-control w-50 mb-3" id="docValue">
-      </div>
-      <div class="date">
-        <label for="date">التاريخ</label>
-        <input type="date" class="form-control w-50 mb-3" id="date">
-      </div>
-      <!-- Button Add Body -->
-      <div class="btn btn-info mt-4" id="addVoice" onclick="showVoice()">إضافة</div>
-      <!-- Button Remove All -->
-      <div class="btn btn-danger mt-4 mx-2" onclick="deleteAll()">حذف الكل</div>
-      <!-- Body Table -->
-      <table class="table text-center table-bordered mt-5">
-        <thead class="table-dark">
-          <th class="fs-5">م</th>
-          <th class="fs-5">الإدارة</th>
-          <th class="fs-5">الفرع</th>
-          <th class="fs-5">رقم الفاتورة</th>
-          <th class="fs-5">رقم المستند</th>
-          <th class="fs-5">إجمالي الفاتورة</th>
-          <th class="fs-5">إجمالي الإذن</th>
-          <th class="fs-5">التاريخ</th>
-          <th class="fs-5">تعديل</th>
-          <th class="fs-5">حذف</th>
-        </thead>
-        <tbody id="tBody">
-        </tbody>
-      </table>
+  <div class="container">
+    
+    <div class="main-text">
+      <h1><span>Royal</span> Clean</h1>
+      <small>Sales Tracker</small>
     </div>
+
+    <div class="inputs-container">
+
+      <div>
+        <label for="management">Management</label>
+        <input type="text" id="management">
+      </div>
+
+      <div>
+        <label type="text" for="branch">Branch</label>
+        <input type="text" id="branch">
+      </div>
+
+      <div>
+        <label for="voiceTotal">Total</label>
+        <input type="number" id="invoiceTotal">
+      </div>
+
+      <div>
+        <label for="voiceNumber">Voice Number</label>
+        <input type="number" id="invoiceNumber">
+      </div>
+
+      <div>
+        <label for="date">Date</label>
+        <input type="date" id="date">
+      </div>
+
+      <div class="btns">
+        <button class="add-btn" id="addBtn" onclick="addInvoice()">Add</button>
+        <button class="delete-all-btn" id="btnDeleteAll" onclick="deleteAll()">Delete All</button>
+      </div>
+      
+    </div>
+    
+    <div class="search">
+      <input type="text" id="searchInput" placeholder="Search by Management or Invoice Number" oninput="searchInvoices(this.value)">
+    </div>
+
+    <table>
+
+      <thead>
+        <th class="id">ID</th>
+        <th>Management</th>
+        <th>branch</th>
+        <th>Invoice Total</th>
+        <th>Invoice Number</th>
+        <th>Date</th>
+        <th>Edite</th>
+      </thead>
+
+      <tbody id="tBody">
+        
+      </tbody>
+
+      <tfoot>
+        <th colspan="5">Totaly</th>
+        <th colspan="2" id="totalSales"></th>
+      </tfoot>
+
+    </table>
+
   </div>
-  <script src="main.js"></script>
+  <script src="js/main.js"></script>
+  <script src="https://kit.fontawesome.com/70d93299bb.js" crossorigin="anonymous"></script>
 </body>
 </html>
